@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="2" skipped="0" tests="15" time="0.118" timestamp="2026-11-10T01:10:53.784433+05:00" hostname="a02-607b"><testcase classname="test_shop" name="test_delivery[0-city-1000]" time="0.001" /><testcase classname="test_shop" name="test_delivery[9999-city-1000]" time="0.001" /><testcase classname="test_shop" name="test_delivery[10000-city-0]" time="0.001"><failure message="AssertionError: assert 1000 == 0&#10; +  where 1000 = delivery_cost(10000, 'city')">amount = 10000, zone = 'city', expected = 0
+
+    @pytest.mark.parametrize("amount, zone, expected", [
+        (0, "city", 1000),
+        (9999, "city", 1000),
+        (10000, "city", 0),
+        (10001, "city", 0),
+        (0, "region", 2000),
+        (9999, "region", 2000),
+        (10000, "region", 0),
+        (10001, "region", 0),
+    ])
+    def test_delivery(amount, zone, expected):
+&gt;       assert delivery_cost(amount, zone) == expected
+E       AssertionError: assert 1000 == 0
+E        +  where 1000 = delivery_cost(10000, 'city')
+
+test_shop.py:17: AssertionError</failure></testcase><testcase classname="test_shop" name="test_delivery[10001-city-0]" time="0.001" /><testcase classname="test_shop" name="test_delivery[0-region-2000]" time="0.000" /><testcase classname="test_shop" name="test_delivery[9999-region-2000]" time="0.000" /><testcase classname="test_shop" name="test_delivery[10000-region-0]" time="0.001"><failure message="AssertionError: assert 2000 == 0&#10; +  where 2000 = delivery_cost(10000, 'region')">amount = 10000, zone = 'region', expected = 0
+
+    @pytest.mark.parametrize("amount, zone, expected", [
+        (0, "city", 1000),
+        (9999, "city", 1000),
+        (10000, "city", 0),
+        (10001, "city", 0),
+        (0, "region", 2000),
+        (9999, "region", 2000),
+        (10000, "region", 0),
+        (10001, "region", 0),
+    ])
+    def test_delivery(amount, zone, expected):
+&gt;       assert delivery_cost(amount, zone) == expected
+E       AssertionError: assert 2000 == 0
+E        +  where 2000 = delivery_cost(10000, 'region')
+
+test_shop.py:17: AssertionError</failure></testcase><testcase classname="test_shop" name="test_delivery[10001-region-0]" time="0.000" /><testcase classname="test_shop" name="test_invalid_input[-1-city-ValueError]" time="0.000" /><testcase classname="test_shop" name="test_invalid_input[12.5-city-TypeError]" time="0.001" /><testcase classname="test_shop" name="test_invalid_input[True-city-TypeError]" time="0.000" /><testcase classname="test_shop" name="test_invalid_input[5000-other-ValueError]" time="0.000" /><testcase classname="test_shop" name="test_order_result" time="0.000" /><testcase classname="test_shop" name="test_order_saved_once" time="0.000" /><testcase classname="test_shop" name="test_storage_failure" time="0.001" /></testsuite></testsuites>

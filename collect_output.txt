@@ -1,0 +1,17 @@
+test_shop.py::test_delivery[0-city-1000]
+test_shop.py::test_delivery[9999-city-1000]
+test_shop.py::test_delivery[10000-city-0]
+test_shop.py::test_delivery[10001-city-0]
+test_shop.py::test_delivery[0-region-2000]
+test_shop.py::test_delivery[9999-region-2000]
+test_shop.py::test_delivery[10000-region-0]
+test_shop.py::test_delivery[10001-region-0]
+test_shop.py::test_invalid_input[-1-city-ValueError]
+test_shop.py::test_invalid_input[12.5-city-TypeError]
+test_shop.py::test_invalid_input[True-city-TypeError]
+test_shop.py::test_invalid_input[5000-other-ValueError]
+test_shop.py::test_order_result
+test_shop.py::test_order_saved_once
+test_shop.py::test_storage_failure
+
+15 tests collected in 0.01s
